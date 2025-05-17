@@ -1,4 +1,4 @@
-import "./App.css";
+import React from "react";
 import { Header } from "./components/Header.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import { Form } from "./components/Form.jsx";
@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer.jsx";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col items-center font-poppins">
       <Header />
       <Navbar />
       <main>
