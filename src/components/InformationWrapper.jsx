@@ -3,7 +3,7 @@ import { InformationBlocks } from "./InformationBlocks";
 
 export const InformationWrapper = () => {
   return (
-    <div className="w-3/4 mt-60 flex flex-col items-center justify-center ">
+    <div className="w-3/4 flex flex-col items-center justify-center ">
       <div className="flex flex-col items-center justify-center gap-4">
         <h2 className="font-bold text-4xl text-neutral-veryDarkViolet">
           Advanced Statistics
