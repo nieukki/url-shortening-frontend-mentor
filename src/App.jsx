@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer.jsx";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center font-poppins">
+    <div className="min-h-screen flex flex-col items-center font-poppins overflow-x-hidden">
       <Header />
       <Navbar />
       <main>
