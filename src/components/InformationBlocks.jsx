@@ -2,7 +2,7 @@ import React from "react";
 
 export const InformationBlocks = () => {
   return (
-    <div className="flex flex-row relative mb-40">
+    <div className="flex flex-row relative mb-60">
       <div className="relative flex flex-col items-start justify-center w-1/3 bg-white rounded-lg px-8">
         <div className="absolute top-0 -translate-y-1/2 bg-primary-darkViolet p-6 rounded-full">
           <img

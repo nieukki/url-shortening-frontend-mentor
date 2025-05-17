@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar.jsx";
 import { Form } from "./components/Form.jsx";
 import { ListOfLinks } from "./components/ListOfLinks.jsx";
 import { InformationWrapper } from "./components/InformationWrapper.jsx";
+import { Boost } from "./components/Boost.jsx";
 import { Footer } from "./components/Footer.jsx";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <ListOfLinks />
         <InformationWrapper />
       </main>
+      <Boost />
       <Footer />
     </div>
   );
