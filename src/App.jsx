@@ -3,6 +3,7 @@ import { Header } from "./components/Header.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import { Form } from "./components/Form.jsx";
 import { ListOfLinks } from "./components/ListOfLinks.jsx";
+import { InformationWrapper } from "./components/InformationWrapper.jsx";
 import { Footer } from "./components/Footer.jsx";
 
 function App() {
@@ -10,9 +11,10 @@ function App() {
     <div className="min-h-screen flex flex-col items-center font-poppins overflow-x-hidden">
       <Header />
       <Navbar />
-      <main>
+      <main className="mt-60 bg-main-background w-full flex flex-col items-center justify-center relative">
         <Form />
         <ListOfLinks />
+        <InformationWrapper />
       </main>
       <Footer />
     </div>
