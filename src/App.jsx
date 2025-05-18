@@ -10,24 +10,32 @@ import { Footer } from "./components/Footer.jsx";
 
 function App() {
   const [dataArray, setDataArray] = useState([]);
+  const [isValidLink, setIsValidLink] = useState(true);
+
   const handleShorten = (url) => {
-    fetch(`https://is.gd/create.php?format=json&url=${url}`)
-      .then((res) => res.json())
-      .then((data) =>
-        setDataArray([
-          ...dataArray,
-          { originalURL: url, shortenedURL: data.shorturl },
-        ])
-      )
-      .catch((error) => console.error("Error fetching shortened URL:", error));
+    const regex = /^(https?:\/\/)([a-z0-9-]+\.)+[a-z]{2,}([?#][^\s]*)?$/i;
+    const isValidUrl = regex.test(url);
+    setIsValidLink(isValidUrl);
+    if (isValidUrl && url !== "") {
+      fetch(`https://is.gd/create.php?format=json&url=${url}`)
+        .then((res) => res.json())
+        .then((data) =>
+          setDataArray((prevDataArray) => [
+            ...prevDataArray,
+            { originalURL: url, shortenedURL: data.shorturl },
+          ])
+        )
+        .catch((error) =>
+          console.error("Error fetching shortened URL:", error)
+        );
+    }
   };
-  console.log(dataArray);
   return (
     <div className="min-h-screen flex flex-col items-center font-poppins overflow-x-hidden">
       <Header />
       <Navbar />
       <main className="mt-60 bg-main-background w-full flex flex-col items-center justify-center relative">
-        <Form handleShorten={handleShorten} />
+        <Form handleShorten={handleShorten} isValidLink={isValidLink} />
         <ListOfLinks dataArray={dataArray} />
         <InformationWrapper />
       </main>

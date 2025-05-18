@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const Form = ({ handleShorten }) => {
+export const Form = ({ handleShorten, isValidLink }) => {
   const [inputUrl, setInputUrl] = useState("");
 
   return (
@@ -16,9 +16,15 @@ export const Form = ({ handleShorten }) => {
       <input
         type="text"
         placeholder="Shorten a link here..."
-        className="bg-white placeholder:text-neutral-grayishViolet placeholder:font-medium px-6 py-4 rounded-lg flex-1"
+        className={`bg-white placeholder:text-neutral-grayishViolet placeholder:font-medium px-6 py-4 rounded-lg flex-1 ${
+          isValidLink
+            ? ""
+            : "outline-3 outline-secondary-red placeholder:text-secondary-red"
+        }`}
         value={inputUrl}
-        onChange={(e) => setInputUrl(e.target.value)}
+        onChange={(e) => {
+          setInputUrl(e.target.value);
+        }}
       />
       <button
         type="submit"
@@ -26,6 +32,13 @@ export const Form = ({ handleShorten }) => {
       >
         Shorten it!
       </button>
+      <i
+        className={`absolute left-15 bottom-5 text-secondary-red ${
+          isValidLink ? "hidden" : "visible"
+        }`}
+      >
+        Please add a link
+      </i>
     </form>
   );
 };
