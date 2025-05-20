@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 
 export const LinkTemplate = ({ item }) => {
@@ -15,9 +14,14 @@ export const LinkTemplate = ({ item }) => {
           {item.shortenedURL}
         </p>
         <button
-          onClick={() => handleCopyURL(item.shortenedURL)}
-          className={`w-[100px] transition-colors duration-50 flex flex-row items-center justify-center px-6 py-2 w rounded-lg text-white font-medium cursor-pointer  ${
-            !isCopied ? "bg-primary-cyan" : "bg-primary-darkViolet"
+          onClick={() => {
+            handleCopyURL(item.shortenedURL);
+            setTimeout(() => {
+              setIsCopied(false);
+            }, 2000);
+          }}
+          className={`w-[100px] transition-all duration-200 flex flex-row items-center justify-center px-6 py-2 w rounded-lg text-white font-medium cursor-pointer  ${
+            !isCopied ? "bg-primary-cyan" : "bg-primary-darkViolet scale-"
           }`}
           disabled={isCopied}
         >
