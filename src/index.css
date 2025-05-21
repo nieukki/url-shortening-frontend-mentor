@@ -11,4 +11,7 @@
   --color-neutral-veryDarkBlue: hsl(255, 11%, 22%);
   --color-neutral-veryDarkViolet: hsl(260, 8%, 14%);
   --font-poppins: "Poppins", sans-serif;
+  --breakpoint-sm: 731px;
+  --breakpoint-tablet: 1241px;
+  --breakpoint-info: 1051px;
 }
